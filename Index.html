@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S7 Transmission 1</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #00ffff; /* Electric cyan */
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .transmission {
+      text-align: center;
+      animation: flicker 2s infinite;
+    }
+
+    .transmission h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.1em;
+    }
+
+    .transmission p {
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .glitch {
+      position: relative;
+      color: #00ffff;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #ff00ff;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch 2s infinite;
+    }
+
+    .glitch::after {
